@@ -1,3 +1,4 @@
+using Flunt.Validations;
 using Store.Domain.Enums;
 
 namespace Store.Domain.Entities;
@@ -6,6 +7,13 @@ public class Order : Entity
 {
     public Order(Customer customer,decimal deliveryFee, Discount discount)
     {
+        AddNotifications
+        (
+            new Contract<Order>()
+                .Requires()
+                .IsNotNull(customer, "Customer", "O Cliente não pode ser nulo")
+        );
+
         Customer = customer;
         Date = DateTime.Now;
         Number = Guid.NewGuid().ToString().Substring(0, 8);
@@ -26,7 +34,9 @@ public class Order : Entity
     public void AddItem(Product product, int quantity)
     {
         var item = new OrderItem(product, quantity);
-        Items.Add(item);
+
+        if(item.IsValid)
+            Items.Add(item);
     }
 
     public decimal Total()
