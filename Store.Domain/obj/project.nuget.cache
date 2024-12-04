@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "eB3NuWPmr7g=",
+  "dgSpecHash": "gEN7spw+zkI=",
   "success": true,
   "projectFilePath": "C:\\Users\\lsilva\\Documents\\Leandro\\lab_leandro\\store\\Store.Domain\\Store.Domain.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\lsilva\\.nuget\\packages\\flunt\\2.0.5\\flunt.2.0.5.nupkg.sha512"
+  ],
   "logs": []
 }
