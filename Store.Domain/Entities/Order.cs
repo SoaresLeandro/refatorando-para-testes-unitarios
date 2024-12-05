@@ -7,13 +7,6 @@ public class Order : Entity
 {
     public Order(Customer customer,decimal deliveryFee, Discount discount)
     {
-        AddNotifications
-        (
-            new Contract<Order>()
-                .Requires()
-                .IsNotNull(customer, "Customer", "O Cliente não pode ser nulo")
-        );
-
         Customer = customer;
         Date = DateTime.Now;
         Number = Guid.NewGuid().ToString().Substring(0, 8);
@@ -21,6 +14,13 @@ public class Order : Entity
         Discount = discount;
         Status = EOrderStatus.WaitingPayment;
         Items = new List<OrderItem>();
+
+        AddNotifications
+        (
+            new Contract<Order>()
+                .Requires()
+                .IsNotNull(Customer, "Customer", "O Cliente não pode ser nulo")
+        );
     }
 
     public Customer Customer { get; set; }

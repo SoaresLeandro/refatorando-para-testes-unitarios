@@ -6,17 +6,17 @@ public class Product : Entity
 {
     public Product(string title, decimal price, bool active)
     {
+        Title = title;
+        Price = price;
+        Active = active;
+
         AddNotifications
         (
             new Contract<Product>()
                 .Requires()
-                .IsNullOrEmpty(title, "Title", "O título está inválido")
-                .IsLowerOrEqualsThan(price, 0, "Price", "O preço deve ser maior que 0")
+                .IsNotEmpty(Title, "Title", "O título está inválido")
+                .IsGreaterThan(Price, 0, "Price", "O preço deve ser maior que 0")
         );
-
-        Title = title;
-        Price = price;
-        Active = active;
     }
 
     public string Title { get; private set; }

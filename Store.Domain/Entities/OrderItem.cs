@@ -5,18 +5,18 @@ namespace Store.Domain.Entities;
 public class OrderItem : Entity
 {
     public OrderItem(Product product, int quantity)
-    {
+    {        
+        Product = product;
+        Price = Product is not null ? Product.Price : 0;
+        Quantity = quantity;
+        
         AddNotifications
         (
             new Contract<OrderItem>()
                 .Requires()
-                .IsNotNull(product, "Product", "O Produto não pode ser nulo")
-                .IsLowerOrEqualsThan(quantity, 0, "Quantity", "A Quantidade deve ser maior que 0")
+                .IsNotNull(Product, "Product", "O Produto não pode ser nulo")
+                .IsGreaterThan(Quantity, 0, "Quantity", "A Quantidade deve ser maior que 0")
         );
-        
-        Product = product;
-        Price = Product is not null ? Product.Price : 0;
-        Quantity = quantity;
     }
 
     public Product Product { get; private set; }

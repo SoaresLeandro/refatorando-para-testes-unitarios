@@ -6,16 +6,16 @@ public class Discount : Entity
 {
     public Discount(decimal amount, DateTime expireDate)
     {
+        Amount = amount;
+        ExpireDate = expireDate;
+
         AddNotifications
         (
             new Contract<Discount>()
                 .Requires()
-                .IsLowerOrEqualsThan(amount, 0, "Amount", "O valor deve ser maior que 0")
-                .IsLowerOrEqualsThan(expireDate, DateTime.Now, "ExpireDate", "A data de expiração não pode ser menor que a data atual")
+                .IsGreaterThan(Amount, 0, "Amount", "O valor deve ser maior que 0")
+                .IsGreaterOrEqualsThan(ExpireDate, DateTime.Now, "ExpireDate", "A data de expiração não pode ser menor que a data atual")
         );
-
-        Amount = amount;
-        ExpireDate = expireDate;
     }
 
     public decimal Amount { get; private set; }

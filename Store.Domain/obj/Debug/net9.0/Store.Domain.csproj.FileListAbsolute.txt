@@ -1,0 +1,13 @@
+C:\Users\lsilva\Documents\Leandro\lab_leandro\store\Store.Domain\bin\Debug\net9.0\Store.Domain.deps.json
+C:\Users\lsilva\Documents\Leandro\lab_leandro\store\Store.Domain\bin\Debug\net9.0\Store.Domain.dll
+C:\Users\lsilva\Documents\Leandro\lab_leandro\store\Store.Domain\bin\Debug\net9.0\Store.Domain.pdb
+C:\Users\lsilva\Documents\Leandro\lab_leandro\store\Store.Domain\obj\Debug\net9.0\Store.Domain.csproj.AssemblyReference.cache
+C:\Users\lsilva\Documents\Leandro\lab_leandro\store\Store.Domain\obj\Debug\net9.0\Store.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lsilva\Documents\Leandro\lab_leandro\store\Store.Domain\obj\Debug\net9.0\Store.Domain.AssemblyInfoInputs.cache
+C:\Users\lsilva\Documents\Leandro\lab_leandro\store\Store.Domain\obj\Debug\net9.0\Store.Domain.AssemblyInfo.cs
+C:\Users\lsilva\Documents\Leandro\lab_leandro\store\Store.Domain\obj\Debug\net9.0\Store.Domain.csproj.CoreCompileInputs.cache
+C:\Users\lsilva\Documents\Leandro\lab_leandro\store\Store.Domain\obj\Debug\net9.0\Store.Domain.sourcelink.json
+C:\Users\lsilva\Documents\Leandro\lab_leandro\store\Store.Domain\obj\Debug\net9.0\Store.Domain.dll
+C:\Users\lsilva\Documents\Leandro\lab_leandro\store\Store.Domain\obj\Debug\net9.0\refint\Store.Domain.dll
+C:\Users\lsilva\Documents\Leandro\lab_leandro\store\Store.Domain\obj\Debug\net9.0\Store.Domain.pdb
+C:\Users\lsilva\Documents\Leandro\lab_leandro\store\Store.Domain\obj\Debug\net9.0\ref\Store.Domain.dll
