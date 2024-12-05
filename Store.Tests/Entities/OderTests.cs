@@ -19,9 +19,24 @@ public class OrderTests
         Assert.AreEqual(8, Convert.ToInt32(order.Number.Length));
     }
 
+    [TestMethod]
+    [TestCategory("Domain")]
     public void DadoUmPedidoValidoSeuStatusDeveSerAguardandoPagamento()
     {
         var order = new Order(_customer, 0, null);
+
+        Assert.AreEqual(EOrderStatus.WaitingPayment, order.Status);
+    }
+
+    [TestMethod]
+    [TestCategory("Domain")]
+    public void DadoUmPagamentoValidoOStatusDoPedidoDeveSerAguardandoEntrega()
+    {
+        var order = new Order(_customer, 0, null);
+        order.AddItem(_product, 2);
+
+        var total = order.Total();
+        order.Pay(total);
 
         Assert.AreEqual(EOrderStatus.WaitingDelivery, order.Status);
     }
