@@ -90,7 +90,8 @@ public class OrderTests
     public void DadoUmDescontoExpiradoOValorDoPedidoDeveSerSessenta()
     {
         var expected = 60;
-        var order = new Order(_customer, 10, _discount);
+        var discount = new Discount(10, DateTime.Now.AddDays(-1));
+        var order = new Order(_customer, 10, discount);
         order.AddItem(_product, 5);
 
         var result = order.Total();
@@ -124,4 +125,16 @@ public class OrderTests
         Assert.AreEqual(expected, result);
     }
 
+    [TestMethod]
+    [TestCategory("Domain")]
+    public void DadaUmaTaxaDeEntregaDeDezOValorDoPedidoDeveSerSessenta()
+    {
+        var expected = 60;
+        var order = new Order(_customer, 10, null);
+        order.AddItem(_product, 5);
+
+        var result = order.Total();
+
+        Assert.AreEqual(expected, result);
+    }
 }
