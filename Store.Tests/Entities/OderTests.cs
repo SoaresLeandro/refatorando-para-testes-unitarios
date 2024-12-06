@@ -7,7 +7,7 @@ namespace Store.Tests.Entities;
 public class OrderTests
 {
     private readonly Customer _customer = new Customer("Customer", "customer@email.com");
-    private readonly Product _product = new Product("Produto 01", 19, true);
+    private readonly Product _product = new Product("Produto 01", 10, true);
     private readonly Discount _discount = new Discount(10, DateTime.Now.AddDays(10));
 
     [TestMethod]
@@ -70,5 +70,18 @@ public class OrderTests
         order.AddItem(_product, -1);
 
         Assert.AreEqual(0, order.Items.Count);
+    }
+
+    [TestMethod]
+    [TestCategory("Domain")]
+    public void DadoUmNovoPedidoValidoOValorTotalDeveSerIgualACinquenta()
+    {
+        var expected = 50;
+        var order = new Order(_customer, 0, null);
+        order.AddItem(_product, 5);
+
+        var result = order.Total();
+
+        Assert.AreEqual(expected, result);
     }
 }
