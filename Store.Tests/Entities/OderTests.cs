@@ -8,7 +8,7 @@ public class OrderTests
 {
     private readonly Customer _customer = new Customer("Customer", "customer@email.com");
     private readonly Product _product = new Product("Produto 01", 10, true);
-    private readonly Discount _discount = new Discount(10, DateTime.Now.AddDays(10));
+    private readonly Discount _discount = new Discount(10, DateTime.Now.AddDays(-1));
 
     [TestMethod]
     [TestCategory("Domain")]
@@ -78,6 +78,19 @@ public class OrderTests
     {
         var expected = 50;
         var order = new Order(_customer, 0, null);
+        order.AddItem(_product, 5);
+
+        var result = order.Total();
+
+        Assert.AreEqual(expected, result);
+    }
+
+    [TestMethod]
+    [TestCategory("Domain")]
+    public void DadoUmDescontoExpiradoOValorDoPedidoDeveSerSessenta()
+    {
+        var expected = 60;
+        var order = new Order(_customer, 10, null);
         order.AddItem(_product, 5);
 
         var result = order.Total();

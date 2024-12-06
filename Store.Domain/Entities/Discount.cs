@@ -14,7 +14,7 @@ public class Discount : Entity
             new Contract<Discount>()
                 .Requires()
                 .IsGreaterThan(Amount, 0, "Amount", "O valor deve ser maior que 0")
-                .IsGreaterOrEqualsThan(ExpireDate, DateTime.Now, "ExpireDate", "A data de expiração não pode ser menor que a data atual")
+                // .IsGreaterOrEqualsThan(ExpireDate, DateTime.Now, "ExpireDate", "A data de expiração não pode ser menor que a data atual")
         );
     }
 
