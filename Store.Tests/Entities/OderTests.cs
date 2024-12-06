@@ -40,4 +40,15 @@ public class OrderTests
 
         Assert.AreEqual(EOrderStatus.WaitingDelivery, order.Status);
     }
+
+    [TestMethod]
+    [TestCategory("Domain")]
+    public void DadoUmPedidoCanceladoDeveRetornarStatusCancelado()
+    {
+        var order = new Order(_customer, 0, null);
+
+        order.Cancel();
+
+        Assert.AreEqual(EOrderStatus.Canceled, order.Status);
+    }
 }
