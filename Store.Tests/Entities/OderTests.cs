@@ -8,7 +8,7 @@ public class OrderTests
 {
     private readonly Customer _customer = new Customer("Customer", "customer@email.com");
     private readonly Product _product = new Product("Produto 01", 10, true);
-    private readonly Discount _discount = new Discount(10, DateTime.Now.AddDays(-1));
+    private readonly Discount _discount = new Discount(10, DateTime.Now.AddDays(10));
 
     [TestMethod]
     [TestCategory("Domain")]
@@ -110,4 +110,18 @@ public class OrderTests
 
         Assert.AreEqual(expected, result);
     }
+
+    [TestMethod]
+    [TestCategory("Domain")]
+    public void DadoUmDescontoDeDezOValorDoPedidoDeveSerCinquenta()
+    {
+        var expected = 50;
+        var order = new Order(_customer, 0, _discount);
+        order.AddItem(_product, 6);
+
+        var result = order.Total();
+
+        Assert.AreEqual(expected, result);
+    }
+
 }
