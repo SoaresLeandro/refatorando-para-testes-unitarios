@@ -51,4 +51,14 @@ public class OrderTests
 
         Assert.AreEqual(EOrderStatus.Canceled, order.Status);
     }
+
+    [TestMethod]
+    [TestCategory("Domain")]
+    public void DadoUmNovoItemSemProdutoOMesmoNaoDeveSerAdicionado()
+    {
+        var order = new Order(_customer, 0, null);
+        order.AddItem(null, 1);
+
+        Assert.AreEqual(0, order.Items.Count);
+    }
 }
