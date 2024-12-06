@@ -137,4 +137,13 @@ public class OrderTests
 
         Assert.AreEqual(expected, result);
     }
+
+    [TestMethod]
+    [TestCategory("Domain")]
+    public void DadoUmPedioSemClienteOMesmoDeveSerInvalido()
+    {
+        var order = new Order(null, 10, _discount);
+
+        Assert.IsFalse(order.IsValid);
+    }
 }
