@@ -10,7 +10,7 @@ public class CreateOrderCommnad : Notifiable<Notification>, Icommand
     {
         Items = new List<CreateOrderItemCommand>();
     }
-    
+
     public CreateOrderCommnad(string customer, string zipCode, string promoCode, IList<CreateOrderItemCommand> items)
     {
         Customer = customer;
@@ -29,7 +29,7 @@ public class CreateOrderCommnad : Notifiable<Notification>, Icommand
         AddNotifications(
             new Contract<CreateOrderCommnad>()
             .Requires()
-            .AreEquals(Customer.Length, 11, "Customer", "Cliente inválido")
+            .AreEquals(Customer.Length, 10, "Customer", "Cliente inválido")
             .AreEquals(ZipCode, 8, "ZipCode", "CEP inválido")
         );
     }
