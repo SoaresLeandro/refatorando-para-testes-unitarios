@@ -1,6 +1,6 @@
 namespace Store.Domain.Commands.Interfaces;
 
-public interface Icommand
+public interface ICommand
 {
     void Validate();
 }

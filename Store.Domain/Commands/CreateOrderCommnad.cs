@@ -4,7 +4,7 @@ using Store.Domain.Commands.Interfaces;
 
 namespace Store.Domain.Commands;
 
-public class CreateOrderCommnad : Notifiable<Notification>, Icommand
+public class CreateOrderCommnad : Notifiable<Notification>, ICommand
 {
     public CreateOrderCommnad()
     {

@@ -5,7 +5,7 @@ using Store.Domain.Entities;
 
 namespace Store.Domain.Commands;
 
-public class CreateOrderItemCommand : Notifiable<Notification>, Icommand
+public class CreateOrderItemCommand : Notifiable<Notification>, ICommand
 {
     public CreateOrderItemCommand() { }
 

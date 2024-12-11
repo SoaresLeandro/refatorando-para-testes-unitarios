@@ -1,4 +1,10 @@
 C:\Users\lsilva\Documents\Leandro\lab_leandro\store\Store.Tests\bin\Debug\net9.0\.msCoverageSourceRootsMapping_Store.Tests
+C:\Users\lsilva\Documents\Leandro\lab_leandro\store\Store.Tests\obj\Debug\net9.0\Store.Tests.csproj.AssemblyReference.cache
+C:\Users\lsilva\Documents\Leandro\lab_leandro\store\Store.Tests\obj\Debug\net9.0\Store.Tests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lsilva\Documents\Leandro\lab_leandro\store\Store.Tests\obj\Debug\net9.0\Store.Tests.AssemblyInfoInputs.cache
+C:\Users\lsilva\Documents\Leandro\lab_leandro\store\Store.Tests\obj\Debug\net9.0\Store.Tests.AssemblyInfo.cs
+C:\Users\lsilva\Documents\Leandro\lab_leandro\store\Store.Tests\obj\Debug\net9.0\Store.Tests.csproj.CoreCompileInputs.cache
+C:\Users\lsilva\Documents\Leandro\lab_leandro\store\Store.Tests\obj\Debug\net9.0\Store.Tests.sourcelink.json
 C:\Users\lsilva\Documents\Leandro\lab_leandro\store\Store.Tests\bin\Debug\net9.0\testhost.dll
 C:\Users\lsilva\Documents\Leandro\lab_leandro\store\Store.Tests\bin\Debug\net9.0\testhost.exe
 C:\Users\lsilva\Documents\Leandro\lab_leandro\store\Store.Tests\bin\Debug\net9.0\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
@@ -159,12 +165,6 @@ C:\Users\lsilva\Documents\Leandro\lab_leandro\store\Store.Tests\bin\Debug\net9.0
 C:\Users\lsilva\Documents\Leandro\lab_leandro\store\Store.Tests\bin\Debug\net9.0\Store.Domain.dll
 C:\Users\lsilva\Documents\Leandro\lab_leandro\store\Store.Tests\bin\Debug\net9.0\Store.Domain.pdb
 C:\Users\lsilva\Documents\Leandro\lab_leandro\store\Store.Tests\bin\Debug\net9.0\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
-C:\Users\lsilva\Documents\Leandro\lab_leandro\store\Store.Tests\obj\Debug\net9.0\Store.Tests.csproj.AssemblyReference.cache
-C:\Users\lsilva\Documents\Leandro\lab_leandro\store\Store.Tests\obj\Debug\net9.0\Store.Tests.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\lsilva\Documents\Leandro\lab_leandro\store\Store.Tests\obj\Debug\net9.0\Store.Tests.AssemblyInfoInputs.cache
-C:\Users\lsilva\Documents\Leandro\lab_leandro\store\Store.Tests\obj\Debug\net9.0\Store.Tests.AssemblyInfo.cs
-C:\Users\lsilva\Documents\Leandro\lab_leandro\store\Store.Tests\obj\Debug\net9.0\Store.Tests.csproj.CoreCompileInputs.cache
-C:\Users\lsilva\Documents\Leandro\lab_leandro\store\Store.Tests\obj\Debug\net9.0\Store.Tests.sourcelink.json
 C:\Users\lsilva\Documents\Leandro\lab_leandro\store\Store.Tests\obj\Debug\net9.0\Store.Te.A86D18AC.Up2Date
 C:\Users\lsilva\Documents\Leandro\lab_leandro\store\Store.Tests\obj\Debug\net9.0\Store.Tests.dll
 C:\Users\lsilva\Documents\Leandro\lab_leandro\store\Store.Tests\obj\Debug\net9.0\refint\Store.Tests.dll
