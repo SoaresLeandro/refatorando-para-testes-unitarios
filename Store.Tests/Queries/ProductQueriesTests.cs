@@ -7,12 +7,8 @@ namespace Store.Tests.Queries;
 [TestClass]
 public class ProductQueriesTests
 {
-    private readonly FakeProductRepository _fakeProductRepository;
+    private readonly FakeProductRepository _fakeProductRepository = new FakeProductRepository();
     IList<Product> _products = new List<Product>();
-    public ProductQueriesTests()
-    {
-        var _fakeProductRepository = new FakeProductRepository();
-    }
 
     [TestMethod]
     [TestCategory("Queries")]

@@ -5,7 +5,7 @@ namespace Store.Tests.Repositories;
 
 public class FakeProductRepository : IProductRepository
 {
-    public IList<Product> _products;
+    private IList<Product> _products;
 
     public FakeProductRepository()
     {        
