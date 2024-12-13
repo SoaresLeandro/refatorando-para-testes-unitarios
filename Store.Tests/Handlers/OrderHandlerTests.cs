@@ -1,5 +1,6 @@
 using System.Xml.Serialization;
 using Store.Domain.Commands;
+using Store.Domain.Commands.Interfaces;
 using Store.Domain.Entities;
 using Store.Domain.Handlers;
 using Store.Domain.Repositores;
@@ -38,7 +39,11 @@ public class OrderHandlerTests
         orderCommand.Items.Add(new CreateOrderItemCommand(Guid.NewGuid(), 1));
 
         orderCommand.Validate();
-        bool result = orderCommand.IsValid;
+
+        OrderHandler orderHandler = new OrderHandler(_customerRepository, _deliveryFeeRepository, _discountRepository, _productRepository, _orderRepository);
+        GenericCommandResult commandResult = (GenericCommandResult)orderHandler.Handle(orderCommand);
+
+        bool result = commandResult.Success;
 
         Assert.AreEqual(expected, result);
     }
@@ -56,7 +61,10 @@ public class OrderHandlerTests
 
         createOrderCommnad.Validate();
 
-        bool result = createOrderCommnad.IsValid;
+        OrderHandler orderHandler = new OrderHandler(_customerRepository, _deliveryFeeRepository, _discountRepository, _productRepository, _orderRepository);
+        GenericCommandResult commandResult = (GenericCommandResult)orderHandler.Handle(createOrderCommnad);
+
+        bool result = commandResult.Success;
 
         Assert.AreEqual(expected, result);
     }
@@ -68,13 +76,16 @@ public class OrderHandlerTests
         bool expected = true;
         CreateOrderCommnad createOrderCommnad = new CreateOrderCommnad();
         createOrderCommnad.Customer = "1234567891";
-        createOrderCommnad.PromoCode = null;
+        createOrderCommnad.PromoCode = "22";
         createOrderCommnad.ZipCode = "12345678";
         createOrderCommnad.Items.Add(new CreateOrderItemCommand(Guid.NewGuid(), 1));
 
         createOrderCommnad.Validate();
 
-        bool result = createOrderCommnad.IsValid;
+        OrderHandler orderHandler = new OrderHandler(_customerRepository, _deliveryFeeRepository, _discountRepository, _productRepository, _orderRepository);
+        GenericCommandResult commandResult = (GenericCommandResult)orderHandler.Handle(createOrderCommnad);
+
+        bool result = commandResult.Success;
 
         Assert.AreEqual(expected, result);
     }
@@ -91,7 +102,10 @@ public class OrderHandlerTests
 
         createOrderCommnad.Validate();
 
-        bool result = createOrderCommnad.IsValid;
+        OrderHandler orderHandler = new OrderHandler(_customerRepository, _deliveryFeeRepository, _discountRepository, _productRepository, _orderRepository);
+        GenericCommandResult commandResult = (GenericCommandResult)orderHandler.Handle(createOrderCommnad);
+
+        bool result = commandResult.Success;
 
         Assert.AreEqual(expected, result);
     }
@@ -102,16 +116,19 @@ public class OrderHandlerTests
     {
         bool expected = false;
 
-        CreateOrderCommnad orderCommand = new CreateOrderCommnad();
-        orderCommand.Customer = null;
-        orderCommand.PromoCode = "10";
-        orderCommand.ZipCode = "12345678";
-        orderCommand.Items.Add(new CreateOrderItemCommand(Guid.NewGuid(), 1));
-        orderCommand.Items.Add(new CreateOrderItemCommand(Guid.NewGuid(), 2));
+        CreateOrderCommnad createOrderCommnad = new CreateOrderCommnad();
+        createOrderCommnad.Customer = null;
+        createOrderCommnad.PromoCode = "10";
+        createOrderCommnad.ZipCode = "12345678";
+        createOrderCommnad.Items.Add(new CreateOrderItemCommand(Guid.NewGuid(), 1));
+        createOrderCommnad.Items.Add(new CreateOrderItemCommand(Guid.NewGuid(), 2));
 
-        orderCommand.Validate();
+        createOrderCommnad.Validate();
 
-        bool result = orderCommand.IsValid;
+        OrderHandler orderHandler = new OrderHandler(_customerRepository, _deliveryFeeRepository, _discountRepository, _productRepository, _orderRepository);
+        GenericCommandResult commandResult = (GenericCommandResult)orderHandler.Handle(createOrderCommnad);
+
+        bool result = commandResult.Success;
 
         Assert.AreEqual(expected, result);
     }
@@ -132,9 +149,9 @@ public class OrderHandlerTests
 
         OrderHandler orderHandler = new OrderHandler(_customerRepository, _deliveryFeeRepository, _discountRepository, _productRepository, _orderRepository);
         
-        orderHandler.Handle(orderCommand);
+        GenericCommandResult commandResult = (GenericCommandResult)orderHandler.Handle(orderCommand);
 
-        bool result = orderHandler.IsValid;
+        bool result = commandResult.Success;
 
         Assert.AreEqual(expected, result);
     }
