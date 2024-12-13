@@ -34,7 +34,7 @@ public class OrderHandler : Notifiable<Notification>, IHandler<CreateOrderCommna
     {
         //Fail Fast Validation
         if(!command.IsValid)
-            return new GernericCommandResult(false, "Pedido inválido", command.Notifications);
+            return new GenericCommandResult(false, "Pedido inválido", command.Notifications);
 
         //Recupera o cliente
         var customer = _customerRepository.Get(command.Customer);
@@ -59,9 +59,9 @@ public class OrderHandler : Notifiable<Notification>, IHandler<CreateOrderCommna
         AddNotifications(order.Notifications);
 
         if(!IsValid)
-            return new GernericCommandResult(false, "Pedido inválido", command.Notifications);
+            return new GenericCommandResult(false, "Pedido inválido", command.Notifications);
 
         _orderRepository.Save(order);
-            return new GernericCommandResult(true, "Pedido criado com sucesso!", null);
+            return new GenericCommandResult(true, "Pedido criado com sucesso!", null);
     }
 }

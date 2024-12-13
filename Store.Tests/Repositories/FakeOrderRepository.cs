@@ -7,6 +7,5 @@ public class FakeOrderRepository : IOrderRepository
 {
     public void Save(Order order)
     {
-        throw new NotImplementedException();
     }
 }

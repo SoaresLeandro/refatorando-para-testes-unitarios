@@ -2,9 +2,9 @@ using Store.Domain.Commands.Interfaces;
 
 namespace Store.Domain.Commands;
 
-public class GernericCommandResult : ICommandResult
+public class GenericCommandResult : ICommandResult
 {
-    public GernericCommandResult(bool success, string message, object data)
+    public GenericCommandResult(bool success, string message, object data)
     {
         Success = success;
         Message = message;

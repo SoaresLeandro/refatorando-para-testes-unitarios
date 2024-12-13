@@ -17,7 +17,7 @@ public class ProductQueriesTests
         var expected = 3;
 
         var _query = ProductQueries.GetActiveProducts();
-        var activesProducts = _fakeProductRepository.GetAll().AsQueryable().Where(ProductQueries.GetActiveProducts());
+        var activesProducts = _fakeProductRepository.GetAll().AsQueryable().Where(_query);
         var result = activesProducts.Count();
 
         Assert.AreEqual(expected, result);
@@ -29,8 +29,8 @@ public class ProductQueriesTests
     {
         var expected = 2;
 
-        var _query = ProductQueries.GetActiveProducts();
-        var inactiveProducts = _fakeProductRepository.GetAll().AsQueryable().Where(ProductQueries.GetInactiveProducts());
+        var _query = ProductQueries.GetInactiveProducts();
+        var inactiveProducts = _fakeProductRepository.GetAll().AsQueryable().Where(_query);
         var result = inactiveProducts.Count();
 
         Assert.AreEqual(expected, result);
